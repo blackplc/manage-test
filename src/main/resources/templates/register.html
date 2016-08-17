@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>管理系统</title>
+    <link rel="stylesheet" href="/css/login.css"/>
+    <script>var validForm = function () {
+        var name = document.forms["registerForm"]["name"].value;
+        if (name == null || name ==""){
+            alert("name必须填写");
+            return false;
+        }
+        var password = document.forms["registerForm"]["password"].value;
+        var passwordRepeat = document.forms["registerForm"]["passwordRepeat"].value;
+        if(password == null || password == ""){
+            alert("password必须填写");
+            return false;
+        }
+        if(passwordRepeat == null || passwordRepeat == ""){
+            alert("password必须填写");
+            return false;
+        }
+
+        if (password == passwordRepeat) {
+        } else {
+            alert("密码填写不一致");
+            return false;
+        }
+        return true;
+
+    };
+    </script>
+
+</head>
+<body>
+<div id="form">
+    <form name = "registerForm" method="post" onsubmit="return validForm();">
+        <table>
+            <tr>
+                <td><span>用户名： </span></td>
+                <td><input type="text" name="name" placeholder=""/></td>
+            </tr>
+            <tr>
+                <td><span>密码：</span></td>
+                <td><input type="password" name="password" placeholder=""/></td>
+            </tr>
+            <tr>
+                <td><span>再次输入：</span></td>
+                <td><input type="password" name="passwordRepeat" placeholder=""/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="注册" />
+                </td>
+
+            </tr>
+
+        </table>
+
+    </form>
+</div>
+</body>
+</html>

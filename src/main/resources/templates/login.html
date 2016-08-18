@@ -4,30 +4,35 @@
     <meta charset="UTF-8"/>
     <title>管理系统</title>
     <link rel="stylesheet" href="/css/login.css"/>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+        function getRegisiter() {
+            window.location.href = "http://localhost:8080/register";
+        }
+    </script>
 </head>
 <body>
-<div id="form">
-    <form  method="post">
-        <table>
-            <tr>
-                <td><span>用户名： </span></td>
-                <td><input type="text" name="name" placeholder="" /></td>
-            </tr>
-            <tr>
-                <td> <span>密码： </span></td>
-                <td><input type="password" name="password" placeholder=""/></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" value="登陆"/>
-                    <a href='http://localhost:8080/register' target="_blank">注册</a>
-                </td>
-            </tr>
-        </table>
-    </form>
+<div class="container">
+    <div id="form">
+        <form class="form-signin" method="post">
+            <h2 class="form-signin-heading">管理系统登陆</h2>
+            <input type="text" name="name" placeholder="用户名" class="form-control"/>
+            <input type="password" name="password" placeholder="密码" class="form-control"/>
+            <div class="row" >
+                <div class="col-lg-6 my-list">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
+                </div>
+                <div class="col-lg-6 my-list">
+                    <!--<a href="http://localhost:8080/register"><button class="btn btn-lg btn-primary btn-block" onclick="getRegisiter()">注册</button></a>-->
+                    <button class="btn btn-lg btn-primary btn-block" onclick="getRegisiter()">注册</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
+
 
 </body>
 </html>

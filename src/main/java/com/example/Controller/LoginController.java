@@ -2,6 +2,7 @@ package com.example.Controller;
 
 import com.example.Model.User;
 import com.example.Repository.UserRepository;
+import com.example.Tools.HandleSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +36,7 @@ public class LoginController {
         for (User item : userList) {
             if(item.getName().equals(username)&& item.getPassword().equals(password)){
                 session.setAttribute(username,true);
+                HandleSession.setUsername(username);
                 return "redirect:/manage/" + username;
             }
         }

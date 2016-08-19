@@ -4,14 +4,10 @@
     <meta charset="UTF-8"/>
     <title>管理系统</title>
     <link rel="stylesheet" href="/css/login.css"/>
+    <script src="/js/common.js"></script>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script>
-        function getRegisiter() {
-            window.location.href = "http://localhost:8080/register";
-        }
-    </script>
 </head>
 <body>
 <div class="container">
@@ -26,7 +22,7 @@
                 </div>
                 <div class="col-lg-6 my-list">
                     <!--<a href="http://localhost:8080/register"><button class="btn btn-lg btn-primary btn-block" onclick="getRegisiter()">注册</button></a>-->
-                    <button class="btn btn-lg btn-primary btn-block" onclick="getRegisiter()">注册</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="button" onclick="getRegister()">注册</button>
                 </div>
             </div>
         </form>

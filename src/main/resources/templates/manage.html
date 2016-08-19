@@ -1,12 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <title>管理系统</title>
+    <link rel="stylesheet" href="/css/manage.css"/>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+    <script src="/js/common.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+        function changeColor(el) {
+            var color = $(el).css("background-color");
+            $(".li").css("background-color", "#3d3d3d");
+            $(el).css("background-color", "#0000FF");
+
+        }
+    </script>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
 </head>
 <body>
-<h1>
-    登陆成功！！！
-</h1>
+<div class="navbar navbar-fixed-top navbar-nav navbar-inverse">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#" style="color: white;">后台管理系统</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right" style="margin-right: 50px">
+            <li><a id="user" href="#" style="color: white; size: 22px">欢迎登陆</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">账号管理<span
+                        class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-header" th:text="${username}" style="color: #000;"></li>
+                    <li class="divider"></li>
+                    <li><a href="#">更改密码</a></li>
+                    <li><a href="#" onclick="putHeadPic()">更换头像</a></li>
+                    <li><a href="#" onclick="getCancel()">退出登录</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container" style="height: 100%;width: 200px;float:left;">
+    <div class="row" style="background-color:#3d3d3d;display: inline-block;height:100%;width: 200px;">
+        <div style="background-color:#3d3d3d;display: inline-block;height:100%;width: 200px;">
+            <div style="display: block;float: left;margin-top:80px;margin-left:10px;width:auto;height: 30px;">
+                <div style="float:left">
+                    <img class="img-circle" src="/avatar" width="60px" height="60px"></img>
+                </div>
+                <div style="float:left;padding-left:30px;padding-top:20px">
+                    <span style="color: white;size: 22px;" th:text="${username}"></span>
+                </div>
+            </div>
+            <ul class="list-group" style="margin-top:150px;">
+                <li class="divider" style="background-color: white;height:1px;"></li>
+                <li class="li" style="display:block;text-align: center;height: 40px;line-height: 40px"
+                    onclick="changeColor(this)"><span style="color: white; size: 22px">Android用户管理</span></li>
+                <li class="divider" style="background-color: white;height:1px;"></li>
+                <li class="li" style="display:block;text-align: center;height: 40px;line-height: 40px"
+                    onclick="changeColor(this)"><span style="color: white; size: 22px">常用api管理</span></li>
+                <li class="divider" style="background-color: white;height:1px;"></li>
+                <li class="li" style="display:block;text-align: center;height: 40px;line-height: 40px"
+                    onclick="changeColor(this)"><span style="color: white; size: 22px">帮助</span></li>
+                <li class="divider" style="background-color: white;height:1px;"></li>
+                <li class="li" style="display:block;text-align: center;height: 40px;line-height: 40px"
+                    onclick="changeColor(this)"><span style="color: white; size: 22px">配置信息</span></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<!--<div class="container">-->
+<!--<div class="nav-collapse collapse">-->
+<!--<ul class="page-sidebar-menu">-->
+<!--<li>aaaaa</li>-->
+<!--<li>aaaaa</li>-->
+<!--<li>aaaaa</li>-->
+<!--<li>aaaaa</li>-->
+<!--<li>aaaaa</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
 </body>
 </html>

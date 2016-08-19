@@ -5,6 +5,7 @@
     <title>管理系统</title>
     <link rel="stylesheet" href="/css/login.css"/>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+    <script src="/js/common.js"></script>
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script>var validForm = function () {
@@ -44,8 +45,15 @@
             <input type="password" name="password" placeholder="密码" class="form-control"/>
             <input type="password" name="passwordRepeat" placeholder="再次输入" class="form-control"/>
             <div class="row" >
-                <div class="col-lg-12 my-list">
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+                <div class="col-lg-12">
+                    <div class="col-lg-6 my-list">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+
+                    </div>
+                    <div class="col-lg-6 my-list">
+                        <!--<a href="http://localhost:8080/register"><button class="btn btn-lg btn-primary btn-block" onclick="getRegisiter()">注册</button></a>-->
+                        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="getCancel()">取消</button>
+                    </div>
                 </div>
             </div>
         </form>

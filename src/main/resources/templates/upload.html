@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>管理系统</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+    <script src="/js/common.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="page-header">
+        <h2>上传头像
+            <small>在这里创建自己的头像</small>
+        </h2>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-12">
+
+            <form action="/avatar" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">头像</label>
+                    <input type="file" id="file" name="file"/>
+                </div>
+                <button type="submit" class="btn pull-right btn-primary">上传</button>
+            </form>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

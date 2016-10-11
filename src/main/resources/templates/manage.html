@@ -121,6 +121,55 @@
                     $("#generatedTable").show();
                 }//end success
             })
+
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/apiManage/api/v1/102/apiDetail",
+                dataType: "json",
+                async: false,
+                //object是后台传过来的java list数据集合
+                success: function (objects) {
+                    //1,获取上面id为cloneTr的tr元素
+                    var tr = $("#cloneTr_file");
+                    var tbody = $("#table_body_file");
+                    $.each(objects, function (index, item) {
+                        //克隆tr，每次遍历都可以产生新的tr
+                        var clonedTr = tr.clone();
+                        var _index = index;
+                        //循环遍历cloneTr的每一个td元素，并赋值
+                        clonedTr.children("td").each(function (inner_index) {
+                            //根据索引为每一个td赋值
+                            switch (inner_index) {
+                                case(0):
+                                    $(this).text(_index + 1);
+                                    break;
+                                case(1):
+                                    $(this).text(item.api_name);
+                                    break;
+                                case(2):
+                                    $(this).text(item.api_info);
+                                    break;
+                                case(3):
+                                    $(this).text(item.api_url);
+                                    break;
+                                case(4):
+                                    $(this).text(item.api_method);
+                                    break;
+                                case(5):
+                                    $(this).text("点击查看详情");
+                                    $(this).click(function (){
+                                        getApiDetail(api_id[0])
+                                    });
+                                    break;
+
+                            }//end switch
+                        });//end children.each
+                        tbody.append(clonedTr);
+                    });//end $each
+                    $("#cloneTr_file").hide();//隐藏id=clone的tr，因为该tr中的td没有数据，不隐藏起来会在生成的table第一行显示一个空行
+                    $("#generatedFileTable").show();
+                }//end success
+            })
         }
 
     </script>
@@ -329,6 +378,47 @@
                             <div class="panel-body" id="api_domain3">
                             </div>
                         </div>
+                        <table class="table table-hover table-striped table-bordered" style="display: none"
+                               id="generatedFileTable">
+                            <thead>
+                            <tr>
+                                <th>
+                                    编号
+                                </th>
+                                <th>
+                                    API名字
+                                </th>
+                                <th>
+                                    API功能
+                                </th>
+                                <th>
+                                    API
+                                </th>
+                                <th>
+                                    请求方法
+                                </th>
+                                <th>
+                                    详情
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody id="table_body_file">
+                            <tr id="cloneTr_file">
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="tab-pane" id="picture_api">
                         <h3 id="api_detail_name4">

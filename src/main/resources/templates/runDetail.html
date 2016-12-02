@@ -11,6 +11,7 @@
     <script>
         var cpage = 1;
         var tpage = 0;
+        var cindex= 0;
         function loadAllData() {
             $.ajax({
                 type: "GET",  //提交方式
@@ -26,6 +27,7 @@
                     var tr = $("#cloneTr");
                     var tbody = $("#table_body");
                     $.each(result.subInfos, function (index, item) {
+                        cindex = cindex + 1;
                         //克隆tr，每次遍历都可以产生新的tr
                         var clonedTr = tr.clone();
                         var _index = index;
@@ -69,10 +71,10 @@
                     var tbody = $("#table_body");
                     $.each(result.subInfos, function (index, item) {
                         //克隆tr，每次遍历都可以产生新的tr
-                        var clonedTr = tr.clone();
-                        var _index = index;
+                        var _index = cindex;
+                        cindex = cindex + 1;
                         //循环遍历cloneTr的每一个td元素，并赋值
-                        clonedTr.children("td").each(function (inner_index) {
+                        tr.children("td").each(function (inner_index) {
                             //根据索引为每一个td赋值
                             switch (inner_index) {
                                 case(0):
@@ -88,9 +90,7 @@
                                     break;
                             }//end switch
                         });//end children.each
-                        tbody.append(clonedTr);
                     });//end $each
-                    $("#cloneTr").hide();//隐藏id=clone的tr，因为该tr中的td没有数据，不隐藏起来会在生成的table第一行显示一个空行
                     $("#generatedTable").show();
                 }
             });
@@ -149,15 +149,15 @@
                 <li>
                     <a href="#">上一页</a>
                 </li>
-                <!--<li>-->
-                <!--<a onclick="getPageData(1)">1</a>-->
-                <!--</li>-->
-                <!--<li>-->
-                <!--<a onclick="getPageData(2)">2</a>-->
-                <!--</li>-->
-                <!--<li>-->
-                <!--<a onclick="getPageData(3)">3</a>-->
-                <!--</li>-->
+                <li>
+                <a onclick="getPageData(1)">1</a>
+                </li>
+                <li>
+                <a onclick="getPageData(2)">2</a>
+                </li>
+                <li>
+                <a onclick="getPageData(3)">3</a>
+                </li>
                 <li>
                     <a href="#">下一页</a>
                 </li>

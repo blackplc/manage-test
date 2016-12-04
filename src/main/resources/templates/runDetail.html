@@ -22,7 +22,7 @@
                 success: function (result) {
                     var tr = $("#cloneTr");
                     var tbody = $("#table_body");
-                    $.each(result, function (index, item) {
+                    $.each(result.subInfos, function (index, item) {
                         //克隆tr，每次遍历都可以产生新的tr
                         var clonedTr = tr.clone();
                         var _index = index;
@@ -34,10 +34,12 @@
                                     $(this).text(_index + 1);
                                     break;
                                 case(1):
-                                    $(this).text(item.subInfos[_index].user);
+//                                    $(this).text(item.subInfos[_index].user);
+                                        $(this).text(item.user);
                                     break;
                                 case(2):
-                                    $(this).text(item.subInfos[_index].source_name);
+//                                    $(this).text(item.subInfos[_index].source_name);
+                                        $(this).text(item.source_name);
                                     break;
                             }//end switch
                         });//end children.each

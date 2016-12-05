@@ -8,6 +8,50 @@
     <link rel="stylesheet" href="/css/bootstrap.css"/>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script>
+        function loadAllData() {
+            $.ajax({
+                type: "GET",  //提交方式
+                url: "http://localhost:8011/cps/api/v1/subInfos",//路径
+                data: {
+                    currentPage: 1,
+                    perPage: 10
+                },
+                dataType: "json",
+                async: false,
+                success: function (result) {
+                    var tr = $("#cloneTr");
+                    var tbody = $("#table_body");
+                    $.each(result, function (index, item) {
+                        //克隆tr，每次遍历都可以产生新的tr
+                        var clonedTr = tr.clone();
+                        var _index = index;
+                        //循环遍历cloneTr的每一个td元素，并赋值
+                        clonedTr.children("td").each(function (inner_index) {
+                            //根据索引为每一个td赋值
+                            switch (inner_index) {
+                                case(0):
+                                    $(this).text(_index + 1);
+                                    break;
+                                case(1):
+                                    $(this).text(item.subInfos[_index].user);
+                                    break;
+                                case(2):
+                                    $(this).text(item.subInfos[_index].source_name);
+                                    break;
+                            }//end switch
+                        });//end children.each
+                        tbody.append(clonedTr);
+                    });//end $each
+                    $("#cloneTr").hide();//隐藏id=clone的tr，因为该tr中的td没有数据，不隐藏起来会在生成的table第一行显示一个空行
+                    $("#generatedTable").show();
+                }
+            })
+        }
+    </script>
+    <script>
+        $(loadAllData);
+    </script>
     <style>
         html, body {
             height: 100%;
@@ -26,7 +70,8 @@
 <div class="container" style="margin-top:70px">
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover" style="display: none"
+                   id="generatedTable">
                 <thead>
                 <tr>
                     <th>
@@ -40,16 +85,13 @@
                     </th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
+                <tbody id="table_body">
+                <tr id="cloneTr">
                     <td>
-                        1
                     </td>
                     <td>
-                        byhieg
                     </td>
                     <td>
-                        datasource1
                     </td>
                 </tr>
 

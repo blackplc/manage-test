@@ -95,7 +95,9 @@
                                     break;
                                 case(5):
                                     $(this).text("点击查看详情");
-                                    $(this).click(getApiDetail(api_id[0]));
+                                    $(this).click(function (){
+                                        getApiDetail(api_id[0])
+                                    });
                                     break;
 
                             }//end switch

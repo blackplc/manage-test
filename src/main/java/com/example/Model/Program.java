@@ -17,6 +17,10 @@ public class Program {
     private String name;
     private Integer mark;
 
+    private String detailName;
+    private String apiDes;
+    private String apiDomain;
+
     public Long getId() {
         return id;
     }
@@ -39,5 +43,29 @@ public class Program {
 
     public void setMark(Integer mark) {
         this.mark = mark;
+    }
+
+    public String getDetailName() {
+        return detailName;
+    }
+
+    public void setDetailName(String detailName) {
+        this.detailName = detailName;
+    }
+
+    public String getApiDes() {
+        return apiDes;
+    }
+
+    public void setApiDes(String apiDes) {
+        this.apiDes = apiDes;
+    }
+
+    public String getApiDomain() {
+        return apiDomain;
+    }
+
+    public void setApiDomain(String apiDomain) {
+        this.apiDomain = apiDomain;
     }
 }

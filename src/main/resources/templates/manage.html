@@ -47,15 +47,28 @@
                 async: false,
                 success: function (result) {//返回数据根据结果进行相应的处理
                     $("#lab_1").text(result[0].name);
+                    $("#api_detail_name1").text(result[0].detailName);
+                    $("#api_des1").text(result[0].apiDes);
+                    $("#api_domain1").text(result[0].apiDomain);
                     api_id[0] = result[0].mark;
 
                     $("#lab_2").text(result[1].name);
+                    $("#api_detail_name2").text(result[1].detailName);
+                    $("#api_des2").text(result[1].apiDes);
+                    $("#api_domain2").text(result[1].apiDomain);
                     api_id[1] = result[1].mark;
 
+
                     $("#lab_3").text(result[2].name);
+                    $("#api_detail_name3").text(result[2].detailName);
+                    $("#api_des3").text(result[2].apiDes);
+                    $("#api_domain3").text(result[2].apiDomain);
                     api_id[2] = result[2].mark;
 
                     $("#lab_4").text(result[3].name);
+                    $("#api_detail_name4").text(result[3].detailName);
+                    $("#api_des4").text(result[3].apiDes);
+                    $("#api_domain4").text(result[3].apiDomain);
                     api_id[3] = result[3].mark;
                 }
             });
@@ -109,10 +122,15 @@
                 }//end success
             })
         }
+
     </script>
     <script>
         $(loadAllData);
-
+    </script>
+    <script>
+        function getData(data) {
+            alert(data);
+        }
     </script>
     <style>
         html, body {
@@ -207,29 +225,25 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="cps_subscription_api">
-                        <h3>
-                            CPS订阅端后台API
+                        <h3 id="api_detail_name1">
                         </h3>
-
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h3 class="panel-title">
+                                <h3 class="panel-title" >
                                     API概述
                                 </h3>
                             </div>
-                            <div class="panel-body">
-                                提供订阅端API服务，包括POST订阅请求，GET历史订阅信息，DELETE删除订阅信息。
-                                API风格是RestFul，不需要身份验证
+                            <div class="panel-body" id="api_des1">
+
                             </div>
                         </div>
                         <div class="panel panel-info" style="margin-top: 10px">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
-                                    API域名及端口
+                                    API域名和端口
                                 </h3>
                             </div>
-                            <div class="panel-body">
-                                115.158.145.201:8080/
+                            <div class="panel-body" id="api_domain1">
                             </div>
                         </div>
                         <table class="table table-hover table-striped table-bordered" style="display: none"
@@ -274,9 +288,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="tab-pane" id="login_register_api">
-                        <h3>
-                            登录注册API
+                    <div class="tab-pane" id="login_register_api" >
+                        <h3 id="api_detail_name2">
                         </h3>
 
                         <div class="panel panel-primary">
@@ -285,14 +298,21 @@
                                     API概述
                                 </h3>
                             </div>
-                            <div class="panel-body">
-                                提供登录注册API服务
+                            <div class="panel-body" id="api_des2">
+                            </div>
+                        </div>
+                        <div class="panel panel-info" style="margin-top: 10px">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    API域名和端口
+                                </h3>
+                            </div>
+                            <div class="panel-body" id="api_domain2">
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane" id="file_upload_api">
-                        <h3>
-                            文件上传下载API
+                    <div class="tab-pane" id="file_upload_api" >
+                        <h3 id="api_detail_name3">
                         </h3>
 
                         <div class="panel panel-primary">
@@ -301,14 +321,22 @@
                                     API概述
                                 </h3>
                             </div>
-                            <div class="panel-body">
-                                提供文件上传下载功能
+                            <div class="panel-body" id="api_des3">
+
+                            </div>
+                        </div>
+                        <div class="panel panel-info" style="margin-top: 10px">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    API域名和端口
+                                </h3>
+                            </div>
+                            <div class="panel-body" id="api_domain3">
                             </div>
                         </div>
                     </div>
                     <div class="tab-pane" id="picture_api">
-                        <h3>
-                            图片API
+                        <h3 id="api_detail_name4">
                         </h3>
 
                         <div class="panel panel-primary">
@@ -317,8 +345,16 @@
                                     API概述
                                 </h3>
                             </div>
-                            <div class="panel-body">
-                                提供访问图片的API
+                            <div class="panel-body" id="api_des4">
+                            </div>
+                        </div>
+                        <div class="panel panel-info" style="margin-top: 10px">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    API域名和端口
+                                </h3>
+                            </div>
+                            <div class="panel-body" id="api_domain4">
                             </div>
                         </div>
                     </div>

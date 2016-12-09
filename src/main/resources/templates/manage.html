@@ -9,6 +9,7 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script>
+        var api_id = [];
         function changeContent(value) {
             $("#api_manage_content").hide();
             $("#api_run_content").hide();
@@ -46,15 +47,22 @@
                 async: false,
                 success: function (result) {//返回数据根据结果进行相应的处理
                     $("#lab_1").text(result[0].name);
+                    api_id[0] = result[0].mark;
+
                     $("#lab_2").text(result[1].name);
+                    api_id[1] = result[1].mark;
+
                     $("#lab_3").text(result[2].name);
+                    api_id[2] = result[2].mark;
+
                     $("#lab_4").text(result[3].name);
+                    api_id[3] = result[3].mark;
                 }
             });
 
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/apiManage/api/v1/1/apiDetail",
+                url: "http://localhost:8080/apiManage/api/v1/100/apiDetail",
                 dataType: "json",
                 async: false,
                 //object是后台传过来的java list数据集合
@@ -87,6 +95,7 @@
                                     break;
                                 case(5):
                                     $(this).text("点击查看详情");
+                                    $(this).click(getApiDetail(api_id[0]));
                                     break;
 
                             }//end switch
@@ -247,17 +256,17 @@
                             </thead>
                             <tbody id="table_body">
                             <tr id="cloneTr">
-                                <td>1
+                                <td>
                                 </td>
-                                <td>2
+                                <td>
                                 </td>
-                                <td>3
+                                <td>
                                 </td>
-                                <td>4
+                                <td>
                                 </td>
-                                <td>5
+                                <td>
                                 </td>
-                                <td onclick="getApiDetail(1)">
+                                <td>
                                 </td>
                             </tr>
                             </tbody>

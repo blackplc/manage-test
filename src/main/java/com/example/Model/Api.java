@@ -20,7 +20,7 @@ public class Api {
     private String api_info;
     private String api_url;
     private String api_method;
-    private Integer api_id;
+    private Integer mark;
 
     public Long getId() {
         return id;
@@ -62,11 +62,11 @@ public class Api {
         this.api_method = api_method;
     }
 
-    public Integer getApi_id() {
-        return api_id;
+    public Integer getMark() {
+        return mark;
     }
 
-    public void setApi_id(Integer api_id) {
-        this.api_id = api_id;
+    public void setMark(Integer mark) {
+        this.mark = mark;
     }
 }

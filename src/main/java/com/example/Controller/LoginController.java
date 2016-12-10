@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
  * Created by byhieg on 16-8-17.
  */
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/apiManage/login")
 public class LoginController {
 
     @Autowired
@@ -37,7 +38,7 @@ public class LoginController {
             if(item.getName().equals(username)&& item.getPassword().equals(password)){
                 session.setAttribute(username,true);
                 HandleSession.setUsername(username);
-                return "redirect:/manage/" + username;
+                return "redirect:/apiManage/index/" + username;
             }
         }
         return "error";

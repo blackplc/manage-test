@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by byhieg on 16-8-17.
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/apiManage")
 public class IndexController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String getIndex(){
-        return "redirect:/login";
+        return "redirect:/apiManage/login";
     }
 }

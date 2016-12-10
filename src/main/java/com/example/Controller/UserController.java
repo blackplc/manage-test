@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Created by byhieg on 16-8-18.
  */
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/apiManage/user")
 public class UserController {
 
     @RequestMapping(value = "/info",method = RequestMethod.GET)

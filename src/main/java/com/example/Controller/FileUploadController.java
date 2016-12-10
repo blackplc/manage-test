@@ -15,10 +15,10 @@ import java.io.IOException;
 @Controller
 public class FileUploadController {
 
-    @RequestMapping(value = "/upload",method = RequestMethod.GET)
+    @RequestMapping(value = "/apiManage/upload",method = RequestMethod.GET)
     public String putPic(HttpSession session) throws IOException {
         if (session.getAttribute(HandleSession.getUsername()) == null) {
-            return "redirect:/login";
+            return "redirect:/apiManage/login";
         }
         return "upload";
     }

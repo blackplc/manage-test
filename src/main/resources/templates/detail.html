@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>管理系统</title>
+    <link rel="stylesheet" href="/css/manage.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <script src="/js/common.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap-markdown/2.10.0/js/bootstrap-markdown.js"></script>
+
+    <script>
+        function loadData() {
+            $.ajax({
+                type: "GET",  //提交方式
+                url: "http://localhost:8080/apiManage/api/v1/1/apiDetail/md",//路径
+                dataType: "Html",
+                async: false,
+                success: function (result) {//返回数据根据结果进行相应的处理
+                   $("#content").html(result)
+                }
+            });
+        }
+    </script>
+    <script>
+        $(loadData);
+    </script>>
+    <!--<script type="text/javascript">-->
+        <!--$(document).ready(function(){-->
+            <!--var userName="";-->
+            <!--alert("aaa");-->
+<!--//            $("#content").addBehavior("cps订阅后台的api");-->
+            <!--$("#content").html(userName);-->
+        <!--});-->
+
+    <!--</script>-->
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation"
+                 style="background-color:#3C8DBC;height: 50px;">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1"><span
+                            class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="#" style="font-size: 22px;color: white;">API详情</a>
+                </div>
+                <form class="navbar-form navbar-right" role="search" style="margin-right: 20px">
+                    <div class="form-group">
+                        <input type="text" class="form-control"/>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+            </nav>
+        </div>
+    </div>
+
+    <div style="margin-top: 50px;width: auto;height: auto;" id="content">
+    </div>
+</div>
+
+
+</body>
+</html>

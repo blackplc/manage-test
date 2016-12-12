@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/manage")
+@RequestMapping("/apiManage/index")
 public class ManageController {
 
 //    private String userInfoname;
@@ -22,7 +22,7 @@ public class ManageController {
                             Model model){
 //        userInfoname = username;
         if(session.getAttribute(username) == null){
-            return "redirect:/login";
+            return "redirect:/apiManage/login";
         }
         model.addAttribute("username", username);
         return "manage";

@@ -2,7 +2,7 @@
  * Created by byhieg on 16-8-19.
  */
 
-var address = "http://localhost:8080/";
+var address = "http://localhost:8080/apiManage/";
 function getRegister() {
     window.location.href = address + "register";
 }

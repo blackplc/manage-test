@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-@RequestMapping(value = "/register")
+@RequestMapping(value = "/apiManage/register")
 public class RegisterController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class RegisterController {
     @RequestMapping(method = RequestMethod.POST)
     public String doRegister(User user){
         userRepository.save(user);
-        return "redirect:/login";
+        return "redirect:/apiManage/login";
     }
 }
 

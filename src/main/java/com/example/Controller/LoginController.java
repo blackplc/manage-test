@@ -17,7 +17,7 @@ import java.util.List;
  * Created by byhieg on 16-8-17.
  */
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/apiManage/login")
 public class LoginController {
 
     @Autowired
@@ -38,7 +38,7 @@ public class LoginController {
             if(item.getName().equals(username)&& item.getPassword().equals(password)){
                 session.setAttribute(username,true);
                 HandleSession.setUsername(username);
-                return "redirect:/manage/" + username;
+                return "redirect:/apiManage/index/" + username;
             }
         }
         return "error";

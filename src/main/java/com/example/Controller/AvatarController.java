@@ -18,7 +18,7 @@ import java.io.IOException;
  * Created by byhieg on 16-8-19.
  */
 @Controller
-@RequestMapping("/avatar")
+@RequestMapping("/apiManage/avatar")
 public class AvatarController {
     private Resource resource = new ClassPathResource("static/img/123.jpg");
     private boolean isSuccess = false;
@@ -34,9 +34,9 @@ public class AvatarController {
         ManageUser.avatar = file.getBytes();
         if (ManageUser.avatar != null) {
             isSuccess = true;
-            return "redirect:/manage/" + HandleSession.getUsername();
+            return "redirect:/apiManage/index/" + HandleSession.getUsername();
         }else{
-            return "redirect:/upload";
+            return "redirect:/apiManage/upload";
         }
     }
 

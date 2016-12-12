@@ -11,7 +11,7 @@
     <script>
         function changeColor(el) {
             var color = $(el).css("background-color");
-            $(".li").css("background-color", "#3d3d3d");
+            $(".li").css("background-color", "#374850");
             $(el).css("background-color", "#0000FF");
 
         }
@@ -34,6 +34,7 @@
     <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right" style="margin-right: 50px">
             <li><a id="user" href="#" style="color: white; size: 22px">欢迎登陆</a></li>
+            <li><img src="/img/123.jpg" class="img-circle" style="width: 50px;height: 50px; padding:5px"/></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">账号管理<span
                         class="caret"></span></a>
@@ -49,17 +50,17 @@
     </div>
 </div>
 <div class="container" style="height: 100%;width: 200px;float:left;">
-    <div class="row" style="background-color:#3d3d3d;display: inline-block;height:100%;width: 200px;">
+    <div class="row" style="background-color:#1e282c;display: inline-block;height:100%;width: 200px;">
         <div style="background-color:#1e282c;display: inline-block;height:100%;width: 200px;">
-            <div style="display: block;float: left;margin-top:80px;margin-left:10px;width:auto;height: 30px;">
-                <div style="float:left">
-                    <img class="img-circle" src="/avatar" width="60px" height="60px"/>
-                </div>
-                <div style="float:left;padding-left:30px;padding-top:20px">
-                    <span style="color: white;size: 22px;" th:text="${username}"></span>
-                </div>
-            </div>
-            <ul class="list-group" style="margin-top:150px;">
+            <!--<div style="display: block;float: left;margin-top:80px;margin-left:10px;width:auto;height: 30px;">-->
+                <!--<div style="float:left">-->
+                    <!--<img class="img-circle" src="apiManage/avatar" width="30px" height="30px"/>-->
+                <!--</div>-->
+                <!--<div style="float:left;padding-left:30px;padding-top:20px">-->
+                    <!--<span style="color: white;size: 22px;" th:text="${username}"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <ul class="list-group" style="margin-top:50px;">
                 <li class="divider" style="background-color: white;height:1px;"></li>
                 <li class="li" style="display:block;text-align: center;height: 40px;line-height: 40px"
                     onclick="changeColor(this)"><span style="color: white; size: 22px">API管理</span></li>
@@ -77,16 +78,5 @@
     </div>
 
 </div>
-<!--<div class="container">-->
-<!--<div class="nav-collapse collapse">-->
-<!--<ul class="page-sidebar-menu">-->
-<!--<li>aaaaa</li>-->
-<!--<li>aaaaa</li>-->
-<!--<li>aaaaa</li>-->
-<!--<li>aaaaa</li>-->
-<!--<li>aaaaa</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
 </body>
 </html>

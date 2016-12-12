@@ -40,10 +40,9 @@ public class ManageInfoController {
         return apiRepository.findAll();
     }
 
-    @RequestMapping(value = "/{id}/apiDetail/{id}",method = RequestMethod.GET)
-    public String getDetail(@PathVariable("id")String id , Model model){
-        String content = "<h1>aaaa</h1>";
-        return "detail";
+    @RequestMapping(value = "/{apiID}/apiDetail/md/",method = RequestMethod.GET)
+    public String getDetail(@PathVariable("apiID")String apiID){
+        return "detailMD";
     }
 
 

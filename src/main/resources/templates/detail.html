@@ -15,13 +15,10 @@
             $.ajax({
                 type: "GET",  //提交方式
                 url: "http://localhost:8080/apiManage/api/v1/apiNames",//路径
-                dataType: "json",
+                dataType: "Html",
                 async: false,
                 success: function (result) {//返回数据根据结果进行相应的处理
-                    $("#lab_1").text(result[0].name);
-                    $("#lab_2").text(result[1].name);
-                    $("#lab_3").text(result[2].name);
-                    $("#lab_4").text(result[3].name);
+                   $("#content").html(result)
                 }
             });
         }
@@ -64,8 +61,6 @@
     </div>
 
     <div style="margin-top: 50px;width: auto;height: auto;" id="content">
-
-
     </div>
 </div>
 

@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Mail to byhieg@gmail.com
  */
 @Controller
-@RequestMapping("/apiManage/apiDetail")
+@RequestMapping("/apiManage/")
 public class APIDetailController {
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/apiDetail/{id}",method = RequestMethod.GET)
     public String getDetail(@PathVariable("id")String id , Model model){
         String content = "<h1>aaaa</h1>";
         model.addAttribute("apidetail", content);

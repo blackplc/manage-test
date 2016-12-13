@@ -10,6 +10,25 @@
     <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap-markdown/2.10.0/js/bootstrap-markdown.js"></script>
 
+    <script>
+        function loadData() {
+            $.ajax({
+                type: "GET",  //提交方式
+                url: "http://localhost:8080/apiManage/api/v1/apiNames",//路径
+                dataType: "json",
+                async: false,
+                success: function (result) {//返回数据根据结果进行相应的处理
+                    $("#lab_1").text(result[0].name);
+                    $("#lab_2").text(result[1].name);
+                    $("#lab_3").text(result[2].name);
+                    $("#lab_4").text(result[3].name);
+                }
+            });
+        }
+    </script>
+    <script>
+        $(loadData);
+    </script>>
     <!--<script type="text/javascript">-->
         <!--$(document).ready(function(){-->
             <!--var userName="";-->
@@ -46,199 +65,7 @@
 
     <div style="margin-top: 50px;width: auto;height: auto;" id="content">
 
-        <h1>订阅后台API说明</h1>
 
-        <p>后面的api皆是省略了下面的域名。</p>
-
-        <pre><code>http://api.cps.com
-</code></pre>
-
-        <p>当然，我们项目中实际上是以IP+端口来代替的。
-            请求的时候，别忘加上上面的域名信息。</p>
-
-        <p>API风格为RESTFUL风格。</p>
-
-        <h2>向订阅后台提交订阅条件以及QoS</h2>
-
-        <p>请求方法：POST</p>
-
-        <pre><code>/cps/api/v1/subInfos
-</code></pre>
-
-        <table>
-            <thead>
-            <tr>
-                <th> 提交信息</th>
-                <th> POST</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td> Content-Type</td>
-                <td> text/plain</td>
-            </tr>
-            </tbody>
-        </table>
-
-
-        <p>提交的格式如下：</p>
-
-        <pre><code>{
-
-    "qosSub": {
-
-        "type": "datasource1",
-
-        "timeInterval": "100ms",
-
-        "fresh": "5min"
-
-    },
-
-    "user": "user",
-
-    "data": "{\"condition\":\"age\",\"opeartion\":\"\\u003e\",\"value\":10}"
-
-}
-</code></pre>
-
-        <p>返回的格式：</p>
-
-        <pre><code>
-成功的返回结果
-{
-  "result": "请求成功",
-  "data": "数据已经顺利存库"
-}
-
-失败的返回结果：
-{
-  "result": "请求失败",
-  "data": "失败的原因"
-}
-</code></pre>
-
-        <p>在data字段会写出失败的原因，有以下几种：</p>
-
-        <ol>
-            <li>请求实体无法解析</li>
-            <li>Qos指令无法解析</li>
-        </ol>
-
-
-        <p>如果出现其他异常的操作，系统会返回500</p>
-
-        <h2>获取订阅条件</h2>
-
-        <p>请求方法：GET</p>
-
-        <pre><code>/cps/api/v1/subInfos
-</code></pre>
-
-        <p>还是一样的API,通过请求方法不同进行区分。
-            后面如果不加查询条件，默认不分页，返回所有的订阅条件。</p>
-
-        <p>添加查询条件，返回指定页数的信息,例子如下：</p>
-
-        <pre><code>/cps/api/v1/subInfos?currentPage=1&amp;perPage=10
-</code></pre>
-
-        <table class="table table-hover table-striped table-bordered">
-            <thead>
-            <tr>
-                <th> 查询条件</th>
-                <th> 备注信息</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td> currentPage</td>
-                <td> 不可为空，最小为1</td>
-            </tr>
-            <tr>
-                <td> perPage</td>
-                <td> 不可为空，最小为1</td>
-            </tr>
-            </tbody>
-        </table>
-
-
-        <p>返回的结果例子如下：</p>
-
-        <pre><code>{
-  "currentPage": 1,
-  "totalPage": 20,
-  "subInfos": [
-    {
-      "id": 1,
-      "user": "byhieg",
-      "source_name": "datasource1",
-      "sub_condition": "123"
-    },
-    {
-      "id": 2,
-      "user": "byhieg",
-      "source_name": "datasource1",
-      "sub_condition": "{\"condition\":\"age\",\"opeartion\":\"\\u003e\",\"value\":10}"
-    }
-  ],
-  "result": "查询成功"
-}
-</code></pre>
-
-        <table class="table table-hover table-striped table-bordered">
-            <thead>
-            <tr>
-                <th align="center"> 字段名</th>
-                <th align="center"> 信息</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td align="center"> currentPage</td>
-                <td align="center"> 当前的页码，如果为0，表示查询所有的订阅，不分页</td>
-            </tr>
-            <tr>
-                <td align="center"> totalPage</td>
-                <td align="center"> 总的页数 ，如果为0，表示查询所有的订阅，不分页</td>
-            </tr>
-            <tr>
-                <td align="center"> subInfos</td>
-                <td align="center"> 订阅条件</td>
-            </tr>
-            <tr>
-                <td align="center"> result</td>
-                <td align="center"> 查询结果</td>
-            </tr>
-            </tbody>
-        </table>
-
-
-        <p>查询结果会有两项，查询成功，查询失败。查询失败是因为没有数据返回。
-            其他异常，服务器会返回500。</p>
-
-        <h2>对某个订阅信息进行删除</h2>
-
-        <p>请求方式：POST,DELETE</p>
-
-        <p>按照RESTFUL风格，删除的请求方式只有DELETE。考虑前端框架，不一定提供DELETE方法，因此加入POST。</p>
-
-        <pre><code>/cps/api/v1/subInfos/10
-</code></pre>
-
-        <p>根据订阅信息的ID，对指定ID为10的订阅信息进行删除。</p>
-
-        <p>返回的格式如下：</p>
-
-        <pre><code>{
-  "result": "删除成功",
-  "data": "成功删除该ID的数据"
-}
-{
-  "result": "删除失败",
-  "data": "该ID不存在"
-}
-</code></pre>
     </div>
 </div>
 

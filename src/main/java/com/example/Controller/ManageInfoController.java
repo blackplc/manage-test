@@ -6,6 +6,7 @@ import com.example.Repository.ApiRepository;
 import com.example.Repository.ProgramRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -37,6 +38,12 @@ public class ManageInfoController {
     @ResponseBody
     public List<Api> getApiDetail(@PathVariable("apiID")String apiID){
         return apiRepository.findAll();
+    }
+
+    @RequestMapping(value = "/{id}/apiDetail/{id}",method = RequestMethod.GET)
+    public String getDetail(@PathVariable("id")String id , Model model){
+        String content = "<h1>aaaa</h1>";
+        return "detail";
     }
 
 

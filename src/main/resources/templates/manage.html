@@ -14,32 +14,39 @@
             $("#api_run_content").hide();
 //            $("#config_label").hide();
 //            $("#help_status").hide();
-            $("#api_manage_label").css("backgroundColor","#1e282c");
-            $("#api_run_label").css("backgroundColor","#1e282c");
-            $("#config_label").css("backgroundColor","#1e282c");
-            $("#help_label").css("backgroundColor","#1e282c");
+            $("#api_manage_label").css("backgroundColor", "#1e282c");
+            $("#api_run_label").css("backgroundColor", "#1e282c");
+            $("#config_label").css("backgroundColor", "#1e282c");
+            $("#help_label").css("backgroundColor", "#1e282c");
             switch (value) {
                 case 1:
                     $("#api_manage_content").show();
-                    $("#api_manage_label").css("backgroundColor","#374850");
+                    $("#api_manage_label").css("backgroundColor", "#374850");
                     break;
                 case 2:
                     $("#api_run_content").show();
-                    $("#api_run_label").css("backgroundColor","#374850");
+                    $("#api_run_label").css("backgroundColor", "#374850");
                     break;
                 case 3:
 //                    $("#config_label").show();
-                    $("#help_label").css("backgroundColor","#374850");
+                    $("#help_label").css("backgroundColor", "#374850");
                     break;
                 case 4:
 //                    $("#help_status").show();
-                    $("#config_label").css("backgroundColor","#374850");
+                    $("#config_label").css("backgroundColor", "#374850");
                     break;
             }
         }
-
-
     </script>
+    <!--<script type="text/javascript">-->
+        <!--$(document).ready(function () {-->
+            <!--$.get("localhost:8080/apiManage/api/v1/apiNames", function (data, status) {-->
+                <!--alert("aaa");-->
+                <!--alert("数据: " + data + "\n状态: " + status);-->
+            <!--});-->
+        <!--});-->
+
+    <!--</script>-->
     <style>
         html, body {
             height: 100%;
@@ -121,7 +128,7 @@
                     <li class="active">
                         <a href="#cps_subscription_api" data-toggle="tab">CPS订阅API</a>
                     </li>
-                    <li >
+                    <li>
                         <a href="#login_register_api" data-toggle="tab">登录注册API</a>
                     </li>
                     <li>
@@ -134,7 +141,7 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="cps_subscription_api">
                         <h3>
-                           CPS订阅端后台API
+                            CPS订阅端后台API
                         </h3>
 
                         <div class="panel panel-primary">
@@ -257,7 +264,7 @@
                                 </h3>
                             </div>
                             <div class="panel-body">
-                               提供登录注册API服务
+                                提供登录注册API服务
                             </div>
                         </div>
                     </div>
@@ -273,7 +280,7 @@
                                 </h3>
                             </div>
                             <div class="panel-body">
-                               提供文件上传下载功能
+                                提供文件上传下载功能
                             </div>
                         </div>
                     </div>
@@ -302,13 +309,15 @@
             <div class="panel-group" id="panel_api_run" style="margin-top: 70px;margin-left: 20px;margin-right: 20px;">
                 <div class="panel panel-success">
                     <div class="panel-heading">
-                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel_api_run" href="#panel_api_cps">CPS订阅端API运行情况</a>
+                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel_api_run"
+                           href="#panel_api_cps">CPS订阅端API运行情况</a>
                     </div>
                     <div id="panel_api_cps" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div class="list-group">
                                 <a href="#" class="list-group-item " style="background-color: #dff0d8;">HOME</a>
-                                <a class="list-group-item "> <span class="label label-danger" style=" float:right;">运行中</span> CPI订阅端运行情况</a>
+                                <a class="list-group-item "> <span class="label label-danger"
+                                                                   style=" float:right;">运行中</span> CPI订阅端运行情况</a>
                                 <a class="list-group-item "> <span class="badge">查看详情</span> 订阅信息</a>
                             </div>
                         </div>
@@ -316,13 +325,15 @@
                 </div>
                 <div class="panel panel-info" style="margin-top: 30px">
                     <div class="panel-heading">
-                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel_api_run" href="#panel_api_login">登录注册API运行情况</a>
+                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel_api_run"
+                           href="#panel_api_login">登录注册API运行情况</a>
                     </div>
                     <div id="panel_api_login" class="panel-collapse collapse">
                         <div class="panel-body">
                             <div class="list-group">
                                 <a href="#" class="list-group-item " style="background-color: #d9edf7;">HOME</a>
-                                <a class="list-group-item "> <span class="label label-danger" style=" float:right;">运行中</span> 登录注册运行情况</a>
+                                <a class="list-group-item "> <span class="label label-danger"
+                                                                   style=" float:right;">运行中</span> 登录注册运行情况</a>
                                 <a class="list-group-item "> <span class="badge">查看详情</span>登录信息</a>
                             </div>
                         </div>

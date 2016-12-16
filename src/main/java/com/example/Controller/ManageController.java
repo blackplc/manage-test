@@ -20,23 +20,11 @@ public class ManageController {
     public String getManage(@PathVariable("username") String username,
                             HttpSession session,
                             Model model){
-//        userInfoname = username;
         if(session.getAttribute(username) == null){
             return "redirect:/apiManage/login";
         }
         model.addAttribute("username", username);
         return "manage";
-//        return "manage";
     }
 
-//    @RequestMapping(value = "/user/info",method = RequestMethod.GET)
-//    @ResponseBody
-//    public String getManageUserInfo(HttpSession session){
-//        if(session.getAttribute(userInfoname) == null){
-//            return null;
-//        }
-//        ManageUser user = new ManageUser();
-//        user.setUser(userInfoname);
-//        return gson.toJson(user);
-//    }
 }

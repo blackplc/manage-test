@@ -24,7 +24,7 @@
                     $("#api_manage_label").css("backgroundColor","#374850");
                     break;
                 case 2:
-//                    $("#api_run_label").show();
+                    $("#api_run_content").show();
                     $("#api_run_label").css("backgroundColor","#374850");
                     break;
                 case 3:
@@ -114,7 +114,7 @@
             </ul>
         </div>
         <div style="width: auto;margin-left: 200px;height:100%;background-color:#FAFAFA;" id="api_manage_content">
-            <div class="tabbable" id="tabs-328078" style="margin-top: 70px;margin-left: 20px;">
+            <div class="tabbable" id="tabs-328078" style="margin-top: 70px;margin-left: 20px; margin-right: 20px">
                 <ul class="nav nav-tabs">
                     <li class="active">
                         <a href="#cps_subscription_api" data-toggle="tab">CPS订阅API</a>
@@ -156,34 +156,6 @@
                                 115.158.145.201:8080/
                             </div>
                         </div>
-
-
-                        <!--<dl>-->
-                            <!--<dt style="font-size: 22px">-->
-                                <!--API概述-->
-                            <!--</dt>-->
-                            <!--<dd style="font-size: 18px">-->
-
-                            <!--</dd>-->
-                            <!--<dt style="font-size: 22px">-->
-                                <!--API类型-->
-                            <!--</dt>-->
-                            <!--<dd style="font-size: 18px">-->
-                                <!--RestFUL-->
-                            <!--</dd>-->
-                            <!--<dt style="font-size: 22px">-->
-                                <!--是否需要身份验证-->
-                            <!--</dt>-->
-                            <!--<dd style="font-size: 18px">-->
-                                <!--不需要-->
-                            <!--</dd>-->
-                            <!--<dt style="font-size: 22px">-->
-                                <!--API域名及端口-->
-                            <!--</dt>-->
-                            <!--<dd style="font-size: 18px">-->
-                                <!--115.158.145.201:8080/-->
-                            <!--</dd>-->
-                        <!--</dl>-->
                         <table class="table table-hover table-striped table-bordered">
                             <thead>
                             <tr>
@@ -317,6 +289,32 @@
                             <div class="panel-body">
                                 提供访问图片的API
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: auto;margin-left: 200px;height:100%;background-color:#FAFAFA;display: none"
+             id="api_run_content">
+            <div class="panel-group" id="panel-502909" style="margin-top: 70px;margin-left: 20px;margin-right: 20px;">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-502909" href="#panel-element-678673">Collapsible Group Item #1</a>
+                    </div>
+                    <div id="panel-element-678673" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Anim pariatur cliche...
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a class="panel-title" data-toggle="collapse" data-parent="#panel-502909" href="#panel-element-725595">Collapsible Group Item #2</a>
+                    </div>
+                    <div id="panel-element-725595" class="panel-collapse in">
+                        <div class="panel-body">
+                            Anim pariatur cliche...
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <title>管理系统</title>
@@ -9,6 +9,16 @@
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap-markdown/2.10.0/js/bootstrap-markdown.js"></script>
+
+    <!--<script type="text/javascript">-->
+        <!--$(document).ready(function(){-->
+            <!--var userName="";-->
+            <!--alert("aaa");-->
+<!--//            $("#content").addBehavior("cps订阅后台的api");-->
+            <!--$("#content").html(userName);-->
+        <!--});-->
+
+    <!--</script>-->
 </head>
 <body>
 <div class="container">
@@ -34,7 +44,8 @@
         </div>
     </div>
 
-    <div style="margin-top: 50px;width: auto;height: auto;">
+    <div style="margin-top: 50px;width: auto;height: auto;" id="content">
+
         <h1>订阅后台API说明</h1>
 
         <p>后面的api皆是省略了下面的域名。</p>

@@ -13,3 +13,8 @@ function getCancel() {
 function putHeadPic() {
     window.location.href = address + "upload";
 }
+
+function getApiDetail(id) {
+    alert("aaa");
+    window.location.href = address + "apiDetail/" + id;
+}

@@ -5,78 +5,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
     <title>管理系统</title>
     <link rel="stylesheet" href="/css/login.css"/>
+    <link href="/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="/css/font-awesome.css" rel="stylesheet"/>
     <script src="/js/common.js"></script>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href='http://fonts.useso.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'/>
+
 </head>
-<body>
-<!-- <div class="container">
-    <div id="form">
-        <form class="form-signin" method="post">
-            <h2 class="form-signin-heading">管理系统登陆</h2>
-            <input type="text" name="name" placeholder="用户名" class="form-control"/>
-            <input type="password" name="password" placeholder="密码" class="form-control"/>
-            <div class="row" >
-                <div class="col-lg-6 my-list">
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
-                </div>
-                <div class="col-lg-6 my-list">
-                    <a href="http://localhost:8080/register"><button class="btn btn-lg btn-primary btn-block" onclick="getRegisiter()">注册</button></a>
-                    <button class="btn btn-lg btn-primary btn-block" type="button" onclick="getRegister()">注册</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div> -->
-
-
-<div class="box">
-		<div class="login-box">
-			<div class="login-title text-center">
-				<h1><small>登录</small></h1>
-			</div>
-			<div class="login-content ">
-			<div class="form">
-			<form action="#" method="post">
-				<div class="form-group">
-					<div class="col-xs-12  ">
-						<div class="input-group">
-							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-							<input type="text" id="username" name="name" class="form-control" placeholder="用户名"/>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-xs-12 ">
-						<div class="input-group">
-							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-							<input type="password" id="password" name="password" class="form-control" placeholder="密码"/>
-						</div>
-					</div>
-				</div>
-				<div class="form-group form-actions">
-					<div class="col-xs-12  ">
-                        <button type="submit" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-off"></span> 登录</button>
-
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-xs-6 link">
-						<p class="text-center remove-margin"><small>忘记密码？</small> <a href="#" onclick="getRegister()" ><small>找回</small></a>
-						</p>
-					</div>
-					<div class="col-xs-6 link">
-						<p class="text-center remove-margin"><small>还没注册?</small> <a href="#" onclick="getRegister()" ><small>注册</small></a>
-						</p>
-					</div>
-				</div>
-			</form>
-			</div>
-		</div>
-	</div>
-</div>
-
-
+<body id="login">
+  <div class="login-logo">
+    	<h1><small>API管理系统</small></h1>
+  </div>
+  <h2 class="form-heading">登录</h2>
+  <div class="app-cam">
+	  <form method="post">
+		<input type="text" class="text" name="name" value="用户名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '用户名';}"/>
+		<input type="password" name="password" value="请输入密码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入密码';}"/>
+		<div class="submit"><input type="submit" value="登录"/></div>
+		<ul class="new">
+			<li class="new_left"><p><a href="#">忘记密码?</a></p></li>
+			<li class="new_right"><p class="sign">现在?<a href="register.html">注册</a></p></li>
+			<div class="clearfix"></div>
+		</ul>
+	</form>
+  </div>
 </body>
 </html>

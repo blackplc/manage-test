@@ -11,7 +11,7 @@
     <script>
         function changeContent(value) {
             $("#api_manage_content").hide();
-//            $("#api_run_label").hide();
+            $("#api_run_content").hide();
 //            $("#config_label").hide();
 //            $("#help_status").hide();
             $("#api_manage_label").css("backgroundColor","#1e282c");
@@ -37,6 +37,8 @@
                     break;
             }
         }
+
+
     </script>
     <style>
         html, body {
@@ -297,24 +299,32 @@
 
         <div style="width: auto;margin-left: 200px;height:100%;background-color:#FAFAFA;display: none"
              id="api_run_content">
-            <div class="panel-group" id="panel-502909" style="margin-top: 70px;margin-left: 20px;margin-right: 20px;">
-                <div class="panel panel-default">
+            <div class="panel-group" id="panel_api_run" style="margin-top: 70px;margin-left: 20px;margin-right: 20px;">
+                <div class="panel panel-success">
                     <div class="panel-heading">
-                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-502909" href="#panel-element-678673">Collapsible Group Item #1</a>
+                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel_api_run" href="#panel_api_cps">CPS订阅端API运行情况</a>
                     </div>
-                    <div id="panel-element-678673" class="panel-collapse collapse">
+                    <div id="panel_api_cps" class="panel-collapse collapse">
                         <div class="panel-body">
-                            Anim pariatur cliche...
+                            <div class="list-group">
+                                <a href="#" class="list-group-item " style="background-color: #dff0d8;">HOME</a>
+                                <a class="list-group-item "> <span class="label label-danger" style=" float:right;">运行中</span> CPI订阅端运行情况</a>
+                                <a class="list-group-item "> <span class="badge">查看详情</span> 订阅信息</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
+                <div class="panel panel-info" style="margin-top: 30px">
                     <div class="panel-heading">
-                        <a class="panel-title" data-toggle="collapse" data-parent="#panel-502909" href="#panel-element-725595">Collapsible Group Item #2</a>
+                        <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel_api_run" href="#panel_api_login">登录注册API运行情况</a>
                     </div>
-                    <div id="panel-element-725595" class="panel-collapse in">
+                    <div id="panel_api_login" class="panel-collapse collapse">
                         <div class="panel-body">
-                            Anim pariatur cliche...
+                            <div class="list-group">
+                                <a href="#" class="list-group-item " style="background-color: #d9edf7;">HOME</a>
+                                <a class="list-group-item "> <span class="label label-danger" style=" float:right;">运行中</span> 登录注册运行情况</a>
+                                <a class="list-group-item "> <span class="badge">查看详情</span>登录信息</a>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -42,7 +42,7 @@ public class ManageInfoController {
 
     @RequestMapping(value = "/{apiID}/apiDetail/md",method = RequestMethod.GET)
     public String getDetail(@PathVariable("apiID")String apiID){
-        return "detailMD";
+        return "cps订阅后台的api";
     }
 
 

@@ -32,10 +32,10 @@ public class ManageController {
         }
         List<Program> programs = programRepository.findAll();
         model.addAttribute("username", username);
-        model.addAttribute("name1", programs.get(0));
-        model.addAttribute("name2", programs.get(1));
-        model.addAttribute("name3", programs.get(2));
-        model.addAttribute("name4", programs.get(3));
+        model.addAttribute("name1", programs.get(0).getName());
+        model.addAttribute("name2", programs.get(1).getName());
+        model.addAttribute("name3", programs.get(2).getName());
+        model.addAttribute("name4", programs.get(3).getName());
         return "manage";
     }
 

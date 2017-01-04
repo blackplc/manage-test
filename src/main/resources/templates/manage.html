@@ -38,15 +38,7 @@
             }
         }
     </script>
-    <!--<script type="text/javascript">-->
-        <!--$(document).ready(function () {-->
-            <!--$.get("localhost:8080/apiManage/api/v1/apiNames", function (data, status) {-->
-                <!--alert("aaa");-->
-                <!--alert("数据: " + data + "\n状态: " + status);-->
-            <!--});-->
-        <!--});-->
 
-    <!--</script>-->
     <style>
         html, body {
             height: 100%;
@@ -126,16 +118,16 @@
             <div class="tabbable" id="tabs-328078" style="margin-top: 70px;margin-left: 20px; margin-right: 20px">
                 <ul class="nav nav-tabs">
                     <li class="active">
-                        <a href="#cps_subscription_api" data-toggle="tab">CPS订阅API</a>
+                        <a href="#cps_subscription_api" data-toggle="tab"><span th:text="${name1}"></span></a>
                     </li>
                     <li>
-                        <a href="#login_register_api" data-toggle="tab">登录注册API</a>
+                        <a href="#login_register_api" data-toggle="tab"><span th:text="${name2}"></span></a>
                     </li>
                     <li>
-                        <a href="#file_upload_api" data-toggle="tab">文件上传下载API</a>
+                        <a href="#file_upload_api" data-toggle="tab"><span th:text="${name3}"></span></a>
                     </li>
                     <li>
-                        <a href="#picture_api" data-toggle="tab">图片API</a>
+                        <a href="#picture_api" data-toggle="tab"><span th:text="${name4}"></span></a>
                     </li>
                 </ul>
                 <div class="tab-content">

@@ -17,3 +17,7 @@ function putHeadPic() {
 function getApiDetail(id) {
     window.location.href = address + "api/v1/" + id + "/apiDetail/md";
 }
+
+function getRunDetail() {
+    window.location.href = address +  "index/runDetail";
+}

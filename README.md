@@ -9,8 +9,8 @@
 
 ## 项目截图
 
-![](http://ww1.sinaimg.cn/mw690/876975d1gy1fd498s6v4rj21kw0t5gpt)
+![](http://ww1.sinaimg.cn/large/876975d1gy1fd49dok17fj21kw0t5gpt)
 
-![](http://ww1.sinaimg.cn/mw690/876975d1gy1fd499ua8mfj21kw0m7jzx)
+![](http://ww1.sinaimg.cn/large/876975d1gy1fd49dcarzbj21kw0m7jzx)
 
 ![](http://ww1.sinaimg.cn/large/876975d1gy1fd49aht8zqj21kw0f7djy)

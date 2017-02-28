@@ -15,7 +15,7 @@
         function loadAllData() {
             $.ajax({
                 type: "GET",  //提交方式
-                url: "http://localhost:8011/cps/api/v1/subInfos",//路径
+                url: "http://115.159.145.201:8011/cps/api/v1/subInfos",//路径
                 data: {
                     currentPage: cpage,
                     perPage: 10
@@ -59,7 +59,7 @@
         function getPageData(page) {
             $.ajax({
                 type: "GET",  //提交方式
-                url: "http://localhost:8011/cps/api/v1/subInfos",//路径
+                url: "http://115.159.145.201:8011/cps/api/v1/subInfos",//路径
                 data: {
                     currentPage: page,
                     perPage: 10

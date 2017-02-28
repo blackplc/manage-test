@@ -13,8 +13,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/apiManage/index")
 public class RunDetailController {
 
-    @RequestMapping(value = "/runDetail",method = RequestMethod.GET)
-    public String getRundetail(){
-        return "runDetail";
+    @RequestMapping(value = "/runDetail/{id}",method = RequestMethod.GET)
+    public String getRundetail(@PathVariable("id") String id){
+        switch (id) {
+            case "1":
+                return "cpsRunDetail";
+
+            case "3":
+                return "fileRunDetail";
+
+            default:
+                return null;
+        }
     }
 }

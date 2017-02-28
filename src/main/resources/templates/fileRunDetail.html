@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Api运行状况</title>
+    <link href="/css/style.css" rel='stylesheet' type='text/css'/>
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.css"/>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+        function loadAllData() {
+            var cindex = 0;
+            $.ajax({
+                type: "GET",  //提交方式
+                url: "http://115.159.145.201:8079/api/v1/download/files",//路径
+                dataType: "json",
+                async: false,
+                success: function (result) {
+                    var tr = $("#cloneTr");
+                    var tbody = $("#table_body");
+                    $.each(result.fileList, function (index, item) {
+                        cindex = cindex + 1;
+                        //克隆tr，每次遍历都可以产生新的tr
+                        var clonedTr = tr.clone();
+                        var _index = index;
+                        //循环遍历cloneTr的每一个td元素，并赋值
+                        clonedTr.children("td").each(function (inner_index) {
+                            //根据索引为每一个td赋值
+                            switch (inner_index) {
+                                case(0):
+                                    $(this).text(_index + 1);
+                                    break;
+                                case(1):
+//                                    $(this).text(item.subInfos[_index].user);
+                                    $(this).text(item.fileName);
+                                    break;
+                                case(2):
+//                                    $(this).text(item.subInfos[_index].source_name);
+                                    $(this).text(item.path);
+                                    break;
+                                case(3):
+//                                    $(this).text(item.subInfos[_index].source_name);
+                                    $(this).text(item.size);
+                                    break;
+                            }//end switch
+                        });//end children.each
+                        tbody.append(clonedTr);
+                    });//end $each
+                    $("#cloneTr").hide();//隐藏id=clone的tr，因为该tr中的td没有数据，不隐藏起来会在生成的table第一行显示一个空行
+                    $("#generatedTable").show();
+                }
+            });
+        }
+    </script>
+    <script>
+        $(loadAllData);
+    </script>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar navbar-fixed-top navbar-nav navbar-inverse" style="background-color:#3C8DBC">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#" style="color: white;">后台管理系统</a>
+    </div>
+</div>
+
+<div class="container" style="margin-top:70px">
+    <div class="row-fluid">
+        <div class="span12">
+            <table class="table table-bordered" style="display: none" id="generatedTable">
+                <thead>
+                <tr>
+                    <th>
+                        编号
+                    </th>
+                    <th>
+                        文件名
+                    </th>
+                    <th>
+                        文件路径
+                    </th>
+                    <th>
+                        文件大小
+                    </th>
+                </tr>
+                </thead>
+                <tbody id="table_body">
+                <tr id="cloneTr">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
